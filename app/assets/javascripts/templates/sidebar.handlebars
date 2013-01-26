@@ -1,0 +1,13 @@
+<div id="sidebar">
+  <div id="brand">
+    <h2>{{#linkTo projects}}Headquarters{{/linkTo}}</h2>
+  </div>
+  <div id="project-select" {{bindAttr class="project:selected"}}>
+    {{currentProject}}
+  </div>
+  {{#each project in controller.loaded}}
+    <div id="sidebar-project">
+      <div>{{#linkTo project project}}{{project.name}}{{/linkTo}}</div>
+    </div>
+  {{/each}}
+</div>

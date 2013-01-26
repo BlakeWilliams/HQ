@@ -1,0 +1,63 @@
+//= require bootstrap
+//= require font-awesome
+//= require_self
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  width: 100%;
+}
+
+#left {
+  border-right: solid 8px #eee;
+  background: #222;
+  height: 100%;
+  left: 0;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 200px;
+}
+
+#outlet {
+  height: 100%;
+  margin-left: 230px;
+  padding: 10px 20px;
+  padding-right: 13px;
+  position: relative;
+}
+
+#sidebar {
+  padding-top: 70px;
+  #brand {
+    height: 60px;
+    background: #252525;
+    border-bottom: 1px solid #141414;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  h2 {
+    font-weight: 600;
+    margin-left: -8px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+
+    a {
+      color: #000;
+
+      -webkit-transition: all .2s linear;
+      -moz-transition: all .2s linear;
+      transition: all .2s linear;
+      &:hover {
+        color: #ddd;
+        text-decoration: none;
+        text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+      }
+    }
+  }
+}
