@@ -1,0 +1,105 @@
+$red: #da4f49;
+$green: #3baa3b;
+$blue: #0074cc;
+$dark: #777777;
+
+@mixin button($color) {
+  color: #ffffff;
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $color;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.95) rgba(0, 0, 0, 0.2);
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  *margin-left: .3em;
+  -moz-user-select: none;
+  border-color: darken($color, 12);
+  //border-color: rgba(darken($color, 10), 0.7);
+  //border-color: rgba(darken($color, 10), 0.5) rgba(darken($color, 10), 0.6) rgba(darken($color, 10), 0.6) rgba(darken($color, 10), 0.7);
+  cursor: pointer;
+
+  //background-image: -moz-linear-gradient(top, $color, #e6e6e6);
+  //background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  //background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-color: $color;
+  #background-image: -webkit-gradient(linear, 0 0, 0 100%, from($color), to(darken($color,3)));
+  #background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+
+  &:hover {
+    color: #ffffff;
+    background-color: darken($color, 8);
+    border-color: darken($color, 12);
+    border-color: rgba(darken($color, 12), 0.7);
+    text-decoration: none;
+
+    background-color: darken($color, 10);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(darken($color, 4)), to(darken($color,8)));
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  }
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+.btn { 
+  @include button(#ebebeb);
+  border-color: #c8c8c8;
+  color: #333333;
+  &:hover {
+    border-color: darken(#c8c8c8, 5);
+    color: #333333;
+  }
+
+  &.red   { @include button($red); }
+  &.green { @include button($green); }
+  &.blue  { @include button($blue); }
+  &.dark  { @include button($dark); }
+  &.black { @include button(#444); }
+}
+
+.btn-black { @include button(#444); }
+.btn-red   { @include button($red); }
+.btn-green { @include button($green); }
+.btn-blue  { @include button($blue); }
+.btn-dark  { @include button($dark); }
+
+.btn:hover {
+  text-decoration: none;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -ms-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:active {
+  background-image: none;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  outline: 0;
+}
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  background-image: none;
+  background-color: #e6e6e6;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+

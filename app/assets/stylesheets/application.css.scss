@@ -1,6 +1,7 @@
 //= require bootstrap
 //= require font-awesome
 //= require_self
+//= require_directory .
 
 html, body {
   height: 100%;
@@ -34,8 +35,7 @@ html, body {
   padding-top: 70px;
   #brand {
     height: 60px;
-    background: #252525;
-    border-bottom: 1px solid #141414;
+    border-bottom: 1px solid #1a1a1a;
     position: absolute;
     top: 0;
     left: 0;
