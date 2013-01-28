@@ -11,6 +11,3 @@ App.ProjectsRoute = Ember.Route.extend
 App.ProjectsNewRoute = Ember.Route.extend
   setupController: (controller, model) ->
     controller.set 'content', App.Project.createRecord()
-
-  exit: ->
-    console.log ('hi')

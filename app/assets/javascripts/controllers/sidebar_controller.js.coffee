@@ -1,6 +1,11 @@
 App.SidebarController = Ember.ArrayController.extend
 
   sortProperties: ['id', 'name']
+  
+  showProjects: false
+
+  toggleProjects: ->
+    @set 'showProjects', !@get('showProjects')
 
   loaded: (->
     @get('arrangedContent').filterProperty('isNew', false)
@@ -11,4 +16,3 @@ App.SidebarController = Ember.ArrayController.extend
   ).property('projectName')
 
   projectNameBinding: Ember.Binding.oneWay('project.name')
-

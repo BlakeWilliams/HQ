@@ -2,12 +2,21 @@
   <div id="brand">
     <h2>{{#linkTo projects}}Headquarters{{/linkTo}}</h2>
   </div>
-  <div id="project-select" {{bindAttr class="project:selected"}}>
-    {{currentProject}}
+  <div id="project-select" {{action toggleProjects}} {{bindAttr class="project:selected"}}>
+    <a>{{currentProject}} <i class="icon-reorder"></i></a>
   </div>
-  {{#each project in controller.loaded}}
-    <div id="sidebar-project">
-      <div>{{#linkTo project project}}{{project.name}}{{/linkTo}}</div>
-    </div>
-  {{/each}}
+
+  <div id="sidebar-projects">
+    {{#if showProjects}}
+      {{#each project in controller.loaded}}
+         {{#linkTo project project class="project"}}{{project.name}}{{/linkTo}}
+      {{/each}}
+    {{/if}}
+  </div>
+
+
+  <div id="links">
+    {{#linkTo projects}}<i class="icon-dashboard"></i> Your Dashboard{{/linkTo}}
+    {{#linkTo projects}}<i class="icon-folder-close"></i> All Projects{{/linkTo}}
+  </div>
 </div>
