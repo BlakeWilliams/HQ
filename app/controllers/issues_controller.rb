@@ -8,6 +8,16 @@ class IssuesController < ApplicationController
     @issue = Issue.find(params[:id])
   end
 
+  def create
+    @issue = Issue.new params[:issue]
+
+    if @issue.save
+      render :show
+    else
+      render json: {errors: @issue.errors.messages}, status: :unprocessable_entity
+    end
+  end
+
   def update
     @issue = Issue.find(params[:id])
 

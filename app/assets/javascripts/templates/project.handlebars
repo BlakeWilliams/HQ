@@ -3,7 +3,7 @@
 
 <div id="actions-row">
   <div class="left">
-    {{#linkTo project content class="btn black"}}New Issue{{/linkTo}}
+    {{#linkTo project.newIssue content class="btn black" activeClass="disabled"}}New Issue{{/linkTo}}
   </div>
   <div class="right">
     <div class="btn-group">
@@ -17,6 +17,8 @@
     <a {{action changeFilter 'filters.overdue'}} {{bindAttr class=":btn isOverdue:red"}}>Overdue {{overdue.length}}</a>
   </div>
 </div>
+
+{{outlet}}
 
 {{#if filtered}}
   <table class="table table-striped" id="issue-table">

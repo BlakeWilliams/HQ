@@ -17,13 +17,11 @@ App.ProjectController = Ember.ObjectController.extend
 
   filtered: (-> 
     @get(@filter)
-  ).property('filter')
+  ).property('filter', 'all', 'open', 'closed', 'dueToday', 'overdue')
 
   toggleIssue: (issue) ->
-    console.log issue.get('closed')
     issue.set 'closed', !issue.get('closed')
     issue.transaction.commit()
-
 
   all: (->
     @get('content.issues')

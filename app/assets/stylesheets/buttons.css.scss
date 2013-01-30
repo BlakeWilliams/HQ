@@ -99,13 +99,22 @@ $dark: #777777;
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
+  color: #7B7B7B;
   background-image: none;
-  background-color: #e6e6e6;
+  background-color: #efefef;
+  border: 1px solid #cacaca;
   opacity: 0.65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+
+  &:hover {
+    color: #7B7B7B;
+    background-image: none;
+    background-color: #efefef;
+    border: 1px solid #cacaca;
+  }
 }
 
 
