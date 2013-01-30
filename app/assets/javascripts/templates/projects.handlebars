@@ -1,10 +1,16 @@
 <div id="top">
   <h1>Your Projects</h1>{{#linkTo projects.new class="btn black"}}New Project{{/linkTo}}
 </div>
+
 {{outlet}}
-{{#each project in controller}}
-  <div class="project">
-    <h3>{{#linkTo project project}}{{project.name}}{{/linkTo}}</h3>
-    <p>{{project.description}}</p>
-  </div>
-{{/each}}
+
+
+
+<div class="projects">
+  {{#each project in controller}}
+    <div class="project">
+      <h3>{{#linkTo project project}}{{project.name}}{{/linkTo}}</h3>
+      <p>{{project.description}}</p>
+    </div>
+  {{/each}}
+</div>
