@@ -1,8 +1,13 @@
-<div id="container">
-  <div id="left">
-    {{render sidebar}}
+<header>
+  <div class="container">
+    <h1>{{#linkTo projects}}headquarters{{/linkTo}}</h1>
+    <nav>
+      {{#linkTo projects}}Projects{{/linkTo}}
+    </nav>
   </div>
+</header>
 
+<div class="container">
   <div id="outlet">
     {{outlet}}
   </div>

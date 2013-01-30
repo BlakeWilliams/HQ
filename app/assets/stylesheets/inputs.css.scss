@@ -1,0 +1,33 @@
+$padding-vert: 6px;
+$padding-hori: 6px;
+
+textarea, 
+input[type=text],
+input[type=password] {
+
+  padding: $padding-vert $padding-hori;
+
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  &:focus {
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.075),0 0 3px rgba(81,167,232,0.5);
+  }
+}
+
+.embed-form {
+  margin: 20px 0;
+  padding-right: $padding-hori*2 + 2; // +2 for border
+
+  .fields {
+    width: 100%;
+  }
+  input[type=text] {
+    width: 100%;
+  }
+  textarea {
+    height: 85px;
+    width: 100%;
+  }
+}

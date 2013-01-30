@@ -1,10 +1,14 @@
-<div {{bindAttr class=":field errors.name:error"}}>
-  {{view Ember.TextField valueBinding="content.name"}}
-</div>
-<div {{bindAttr class=":field errors.description:error"}}>
-  {{view Ember.TextArea valueBinding="content.description"}}
-</div>
-<div class="actions">
-  <a {{action cancel}} class="btn">Cancel</a>
-  <a {{action save}} class="btn">Create Project</a>
+<div class="embed-form" id="new-issue">
+  <div class="fields">
+    <div {{bindAttr class=":field errors.name:error"}}>
+      {{view Ember.TextField valueBinding="content.name" placeholder="Your project's name"}}
+    </div>
+    <div {{bindAttr class=":field errors.description:error"}}>
+      {{view Ember.TextArea valueBinding="content.description" placeholder="A description of your project's purpose"}}
+    </div>
+    <div class="actions">
+      <a {{action cancel}} class="btn">Cancel</a>
+      <a {{action save}} class="btn">Create Project</a>
+    </div>
+  </div>
 </div>

@@ -5,5 +5,8 @@ App.ProjectsNewController = Ember.ObjectController.extend
     @get('content').store.commit()
 
   cancel: ->
-    @get('content').deleteRecord()
     @transitionTo('projects')
+
+  didSave: (=>
+    console.log 'saved!' if @content.get('isNew')
+  ).observes('content.isNew')

@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes params[:project]
-      render json: {project: @project}
+      render :show
     else
       render json: {errors: @project.errors.messages}, status: :unprocessable_entity
     end

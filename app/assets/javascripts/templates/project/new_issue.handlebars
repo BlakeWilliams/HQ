@@ -1,0 +1,17 @@
+<div class="embed-form" id="new-issue">
+  <div class="fields">
+    <div {{bindAttr class=":field errors.name:error"}}>
+      {{view Ember.TextField valueBinding="content.name" placeholder="The name of your issue"}}
+    </div>
+    <div {{bindAttr class=":field errors.name:error"}}>
+      {{view view.datePicker valueBinding="content.due" placeholder="Date this issue is due"}}
+    </div>
+    <div {{bindAttr class=":field errors.description:error"}}>
+      {{view Ember.TextArea valueBinding="content.description" placeholder="Describe your issue in detail"}}
+    </div>
+    <div class="actions">
+      <a {{action cancel}} class="btn">Cancel</a>
+      <a {{action save}} class="btn black">Create Issue</a>
+    </div>
+  </div>
+</div>
