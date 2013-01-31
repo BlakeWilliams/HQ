@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require pickadate
 //= require handlebars
 //= require ember
 //= require ember-data

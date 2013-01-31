@@ -1,0 +1,47 @@
+$padding: 10px;
+.ui-datepicker {
+  background: #fff;
+  border: 1px solid #cccccc;
+  font-size: 12px;
+  width: 17em;
+
+  .ui-datepicker-calendar {
+    width: 100%;
+
+    td {
+      padding: 1px 3px;
+    }
+  }
+
+  .ui-state-default {
+    background: #d9d9d9;
+    display: block;
+    padding-right: 3px;
+    text-align: right;
+    width: 100%;
+  }
+
+  $btn-padding: 5px;
+  $btn-color: #333333;
+  .ui-datepicker-prev {
+    color: $btn-color;
+    float: left;
+    font-size: 10px;
+    padding-left: $btn-padding;
+    padding-top: $btn-padding;
+  }
+  .ui-datepicker-next {
+    color: $btn-color;
+    float: right;
+    font-size: 10px;
+    padding-right: $btn-padding;
+    padding-top: $btn-padding;
+    content: "{}"; 
+  }
+  .ui-datepicker-title {
+    background: #ebebeb;
+    font-weight: bold;
+    padding: $btn-padding $padding;
+    text-align: center;
+  }
+}

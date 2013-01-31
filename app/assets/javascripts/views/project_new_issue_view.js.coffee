@@ -1,5 +1,14 @@
 App.ProjectNewIssueView = Ember.View.extend
-  didInsertElement: ->
-    console.log 'rendered'
+  datePicker: App.PickADate.extend
+    format: 'dddd, mmmm d, yyyy'
+    firstDay: 1
+    clear: false
 
-  datePicker: UI.DatePicker.extend()
+    onStart: ->
+      date = new Date()
+      this.setDate(date.getFullYear(), date.getMonth() + 1, date.getDate())
+
+    keyPress: (e) ->
+      e.preventDefault()
+      console.log e
+

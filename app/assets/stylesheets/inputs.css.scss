@@ -23,6 +23,15 @@ input[type=password] {
   .fields {
     width: 100%;
   }
+  .field-group {
+    .field {
+      margin-right: 2%;
+      float: left;
+      &:last-child {
+        margin-right: -3px;
+      }
+    }
+  }
   input[type=text] {
     width: 100%;
   }
