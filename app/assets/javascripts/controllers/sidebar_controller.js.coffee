@@ -1,5 +1,4 @@
 App.SidebarController = Ember.ArrayController.extend
-
   sortProperties: ['id', 'name']
   
   showProjects: false

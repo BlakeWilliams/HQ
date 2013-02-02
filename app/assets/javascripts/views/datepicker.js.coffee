@@ -29,9 +29,5 @@ App.PickADate = Ember.View.extend
       onSelectCallback.call(this) if onSelectCallback
 
     options.keydown = ->
-    @$().pickadate(options).off('keydown').on('keydown', (e) -> e.preventDefault())
-
-  init: ->
-    @_super()
-    this.on 'change', this, (e) ->
-      console.log e
+    @$().pickadate(options).off('keydown').on 'keydown', (e) ->
+      e.preventDefault() if e.keyCode == 8 || e.keyCode == 46

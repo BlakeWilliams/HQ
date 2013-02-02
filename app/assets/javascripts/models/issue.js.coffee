@@ -11,7 +11,7 @@ App.Issue = DS.Model.extend
     return "" unless date
     month = (date.getMonth() + 1).toString()
     month = "0" + month if month.length == 1
-    day = (date.getDate() + 1).toString()
+    day = (date.getDate()).toString()
     day = "0" + day if day.length == 1
     return "#{month}/#{day}/#{date.getFullYear()}"
   ).property('due')
@@ -19,7 +19,8 @@ App.Issue = DS.Model.extend
   isDue: (->
     date = @get('due')
     return false unless date
-    (date.setHours(0,0,0,0) == (new Date()).setHours(0,0,0,0)) && !@get('closed')
+    return false if @get('closed')
+    date.setHours(0,0,0,0) == (new Date()).setHours(0,0,0,0)
   ).property('due', 'closed')
 
   isOverdue: (->

@@ -3,3 +3,4 @@ App.Router.map (match) ->
     @route 'new', {path: 'new'}
   @resource 'project', { path: '/projects/:project_id' }, ->
     @route 'newIssue', {path: 'issues/new'}
+    @resource 'issue', {path: 'issues/:issue_id'}

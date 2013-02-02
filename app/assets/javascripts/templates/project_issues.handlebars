@@ -1,0 +1,19 @@
+{{#if arrangedContent.length}}
+  <table class="table table-striped" id="issue-table">
+    <tbody>
+      {{#each issue in arrangedContent}}
+        <tr>
+          <td class="check" width="1px">
+            <a {{action 'toggleIssue' issue}}>
+              <i {{bindAttr class="issue.closed:icon-check:icon-check-empty"}}></i>
+            </a>
+          </td>
+          <td>{{issue.name}}</td>
+          <td width="1px" {{bindAttr class=":date issue.isDue:due issue.isOverdue:overdue issue.closed"}}>{{issue.dueDate}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No issues Found</p>
+{{/if}}
